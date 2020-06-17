@@ -1,0 +1,5 @@
+\.config/(.*)
+!\.config/override.ini
+!\.config/user-overrides.ini
+arkenfox_userjs
+.DS_Store

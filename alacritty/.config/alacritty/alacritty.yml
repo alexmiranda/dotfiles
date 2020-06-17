@@ -1,0 +1,256 @@
+env:
+  TERM: xterm-256color
+
+window:
+  dimensions:
+    columns: 80
+    lines: 25
+  padding:
+    x: 5
+    y: 2
+
+  dynamic_padding: true
+  decorations: buttonless
+  #startup_mode: Windowed
+  dynamic_title: true
+
+scrolling:
+  history: 10000
+  multiplier: 5
+
+font:
+  size: 15.0
+  normal:
+    family: FiraCode Nerd Font
+    style: Retina
+  bold:
+    style: SemiBold
+  italic:
+    family: Menlo
+    style: Italic
+  bold_italic:
+    style: Bold Italic
+  offset:
+    x: 1
+    y: 1
+  glyph_offset:
+    x: 0
+    y: 0
+  use_thin_strokes: true
+
+draw_bold_text_with_bright_colors: true
+
+schemes:
+  gruvbox_dark: &gruvbox_dark
+    normal:
+      black: &gruvbox_dark_background '0x282828'
+      red: '0xcc241d'
+      green: '0x98971a'
+      yellow: '0xd79921'
+      blue: '0x458588'
+      magenta: '0xb16286'
+      cyan: '0x689d6a'
+      white: '0xa89984'
+    bright:
+      black: '0x928374'
+      red: '0xfb4934'
+      green: '0xb8bb26'
+      yellow: '0xfabd2f'
+      blue: '0x83a598'
+      magenta: '0xd3869b'
+      cyan: '0x8ec07c'
+      white: &gruvbox_dark_foreground '0xebdbb2'
+    primary:
+      background: *gruvbox_dark_background
+      foreground: *gruvbox_dark_foreground
+
+  gruvbox_dark_hard_contrast: &gruvbox_dark_hard_contrast
+    << : *gruvbox_dark
+    primary:
+      background: '0x1d2021' # hard contrast
+      foreground: '0xebdbb2'
+
+  gruvbox_dark_soft_contrast: &gruvbox_dark_soft_contrast
+    << : *gruvbox_dark
+    primary:
+      background: '0x32302f' # soft contrast
+      foreground: '0xebdbb2'
+
+  gruvbox_light: &gruvbox_light
+    primary:
+      background: '0xfbf1c7'
+      foreground: '0x3c3836'
+    normal:
+      black: '0xfbf1c7'
+      red: '0xcc241d'
+      green: '0x98971a'
+      yellow: '0xd79921'
+      blue: '0x458588'
+      magenta: '0xb16286'
+      cyan: '0x689d6a'
+      white: '0x7c6f64'
+    bright:
+      black: '0x928374'
+      red: '0x9d0006'
+      green: '0x79740e'
+      yellow: '0xb57614'
+      blue: '0x076678'
+      magenta: '0x8f3f71'
+      cyan: '0x427b58'
+      white: '0x3c3836'
+
+  gruvbox_light_hard_constrast: &gruvbox_light_hard_contrast
+    << : *gruvbox_light
+    primary:
+      background: '0xf9f5d7' # hard contrast
+      foreground: '0x3c3836'
+
+  gruvbox_light_soft_constrast: &gruvbox_light_soft_contrast
+    << : *gruvbox_light
+    primary:
+      background: '0xf2e5bc' # soft contrast
+      foreground: '0x3c3836'
+
+  one_dark: &one_dark
+    primary:
+      background: '0x1e2127'
+      foreground: '0xabb2bf'
+    normal:
+      black: '0x1e2127'
+      red: '0xe06c75'
+      green: '0x98c379'
+      yellow: '0xd19a66'
+      blue: '0x61afef'
+      magenta: '0xc678dd'
+      cyan: '0x56b6c2'
+      white: '0xabb2bf'
+    bright:
+      black: '0x5c6370'
+      red: '0xe06c75'
+      green: '0x98c379'
+      yellow: '0xd19a66'
+      blue: '0x61afef'
+      magenta: '0xc678dd'
+      cyan: '0x56b6c2'
+      white: '0xffffff'
+
+  papercolor_light: &papercolor_light
+    primary:
+      background: '0xEEEEEE'
+      foreground: '0x4D4D4C'
+    normal:
+      black: '0xEDEDED'
+      red: '0xD7005F'
+      green: '0x718C00'
+      yellow: '0xD75F00'
+      blue: '0x4271AE'
+      magenta: '0x8959A8'
+      cyan: '0x3E999F'
+      white: '0x4D4D4C'
+    bright:
+      black: '0x969694'
+      red: '0xD7005F'
+      green: '0x718C00'
+      yellow: '0xD75F00'
+      blue: '0x4271AE'
+      magenta: '0x8959A8'
+      cyan: '0x3E999F'
+      white: '0xF5F5F5'
+
+colors: *gruvbox_dark
+
+bell:
+  duration: 0
+
+background_opacity: 0.95
+
+selection:
+  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  save_to_clipboard: true
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+
+live_config_reload: true
+
+shell:
+  program: /usr/bin/arch
+  args:
+    - -arm64
+    - -e
+    - SHELL="/Users/alex/.nix-profile/bin/zsh"
+    - /Users/alex/.nix-profile/bin/zsh
+    - -l
+
+working_directory: None
+
+# Send ESC (\x1b) before characters when alt is pressed.
+#alt_send_esc: true
+
+mouse:
+  #double_click: { threshold: 300 }
+  #triple_click: { threshold: 300 }
+  hide_when_typing: true
+
+  # url:
+  #   launcher:
+  #     program: /Applications/Firefox.app/Contents/MacOS/firefox
+  #     args:
+  #       - -private-window
+    #modifiers: None
+
+#mouse_bindings:
+#  - { mouse: Middle, action: PasteSelection }
+
+hints:
+  enabled:
+    - regex: "(https?:)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+      command:
+        program: /Applications/Firefox.app/Contents/MacOS/firefox
+        args:
+          - -private-window
+      postprocessing: true
+      mouse:
+        enabled: true
+        mods: None
+      binding:
+        key: U
+        mods: Control|Shift
+
+key_bindings:
+  - { mods: Command, key: Key0, action: ResetFontSize }
+  - { mods: Command, key: Equals, action: IncreaseFontSize }
+  - { mods: Command, key: Equals, action: IncreaseFontSize }
+  - { mods: Command, key: Minus, action: DecreaseFontSize }
+  - { mods: Command, key: K, action: ClearHistory }
+  - { mods: Command, key: K, chars: "\x0c" }
+  - { mods: Command, key: C, action: Copy }
+  - { mods: Command, key: V, action: Paste }
+  - { mods: Command, key: H, action: Hide }
+  - { mods: Command, key: M, action: Minimize }
+  - { mods: Command, key: Q, action: Quit }
+  - { mods: Command, key: W, action: Quit }
+  - { mods: Command, key: Return, action: ToggleFullscreen }
+  - { mods: Command|Control, key: F, action: ToggleFullscreen }
+
+# debug:
+  # Display the time it takes to redraw each frame.
+  # render_timer: true
+
+  # Keep the log file after quitting Alacritty.
+  #persistent_logging: false
+
+  # Log level
+  #
+  # Values for `log_level`:
+  #   - None
+  #   - Error
+  #   - Warn
+  #   - Info
+  #   - Debug
+  #   - Trace
+  #log_level: Warn
+
+  # Print all received window events.
+  # print_events: false

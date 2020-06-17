@@ -1,0 +1,63 @@
+add_newline = true
+format = """
+$hostname$directory$nix_shell$docker_context$aws$rust$golang$java$swift$nodejs$perl$lua$dotnet$terraform$git_branch$git_status
+$character${custom.foo}"""
+
+rust.format = "[$symbol](bold black)[$version]($style) "
+golang.format = "[$symbol$version]($style) "
+java.format = "[$symbol$version]($style) "
+swift.format = "[$symbol$version]($style) "
+nodejs.format = "[$symbol$version]($style) "
+perl.format = "[$symbol$version]($style) "
+lua.format = "[$symbol$version]($style) "
+
+nix_shell.symbol = " "
+rust.symbol = " "
+golang.symbol = " "
+java.symbol = " "
+swift.symbol = " "
+nodejs.symbol = " "
+lua.symbol = " "
+
+[character]
+success_symbol = "[λ](bold green)"
+error_symbol = "[λ](bold red)"
+vicmd_symbol = "[](bold white)"
+
+[directory]
+truncation_length = 1
+truncate_to_repo = true
+
+[docker_context]
+disabled = true
+
+[aws]
+symbol = " "
+format = "[$symbol$profile$region]($style) "
+disabled = true
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+truncation_length = 20
+only_attached = true
+
+[dotnet]
+symbol = ".NET "
+format = "[$symbol$version $tfm]($style) "
+
+[terraform]
+format = "[$symbol$version$workspace]($style) "
+disabled = true
+
+[hostname]
+format = "[$hostname]($style) "
+ssh_only = true
+
+[status]
+format = "[$symbol]($style) "
+
+[custom.foo]
+shell = ["/opt/homebrew/bin/zsh", "-"]
+description = "foo"
+symbol = ">"
+command = "echo foo"

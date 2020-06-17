@@ -1,0 +1,19 @@
+cmdargs:
+  verbose: no
+  severity: style_problem
+  error-limit: 1
+  stat: yes
+  color: yes
+  json: no
+  env:
+    neovim: no
+  stdin_display_name: stdin
+
+policies:
+  # Experimental
+  ProhibitUnusedVariable:
+    enabled: yes
+  ProhibitImplicitScopeVariable:
+    enabled: yes
+
+# vim: syntax=yaml

@@ -1,0 +1,270 @@
+{
+  "diagnostic.enable": false,
+  "vimlsp.diagnostic.enable": false,
+  "suggest.floatEnable": true,
+
+  // prefs
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.promptInput": true,
+  "coc.preferences.colorSupport": true,
+  "coc.preferences.floatActions": true,
+  "coc.preferences.formatOnSaveFiletypes": ["java"],
+  "coc.preferences.formatOnType": false,
+  "coc.preferences.snippets.enable": true,
+  "coc.preferences.previewAutoClose": true,
+  "coc.preferences.silentAutoupdate": false,
+  "coc.preferences.promptWorkspaceEdit": false,
+  "coc.preferences.bracketEnterImprove": true,
+  "coc.preferences.enableMessageDialog": true,
+  "coc.preferences.enableFloatHighlight": true,
+
+  // prettier
+  "prettier.requireConfig": true,
+  "prettier.formatterPriority": 1,
+
+  // go
+  "go.enable": false,
+  "go.goplsUseDaemon": true,
+  "go.checkForUpdates": "ask",
+  "go.disable": {
+    "completion": false,
+    "diagnostics": false,
+    "workspaceFolders": false
+  },
+  "go.goplsArgs": [],
+  "go.goplsEnv": {},
+  "go.goplsOptions": {
+    "gofumpt": true,
+    "hoverKind": "FullDocumentation",
+    "importShortcut": "Both",
+    "linkTarget": "pkg.go.dev",
+    "linksInHover": true,
+    "local": "",
+    "staticcheck": true,
+    "usePlaceholders": true
+  },
+  "go.tags": {
+    "transform": "camelcase"
+  },
+  "go.tests": {
+    "generateFlags": []
+  },
+
+  // java
+  "java.enabled": false,
+  "java.errors.incompleteClasspath.severity": "error",
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.referencesCodeLens.enabled": false,
+  "java.signatureHelp.enabled": true,
+  "java.implementationsCodeLens.enabled": false,
+  "java.import.gradle.enabled": false,
+  "java.autobuild.enabled": true,
+  "java.completion.enabled": true,
+  "java.completion.overwrite": false,
+  "java.completion.maxResults": 0,
+  "java.progressReports.enabled": true,
+  "java.format.enabled": true,
+  "java.format.onType.enabled": true,
+  "java.format.comments.enabled": true,
+  "java.format.onType.fixComment.enabled": true,
+  "java.foldingRange.enabled": false,
+  "java.maven.downloadSources": true,
+  "java.maven.updateSnapshots": false,
+  "java.codeGeneration.toString.codeStyle": "STRING_BUILDER",
+  "java.codeGeneration.toString.limitElements": 0,
+  "java.codeGeneration.toString.listArrayContents": true,
+  "java.codeGeneration.useBlocks": true,
+  "java.codeGeneration.generateComments": false,
+  "java.saveActions.organizeImports": true,
+  "java.sources.organizeImports.starThreshold": 16,
+  "java.sources.organizeImports.staticStarThreshold": 4,
+  "java.references.includeAccessors": false,
+
+  // sh
+  "sh.enable": false,
+
+  // json
+  "json.enable": false,
+  "json.format.enable": true,
+  "json.schemaDownload.enable": true,
+
+  // toml
+  "toml.enabled": true,
+  "toml.activationStatus": true,
+  "toml.formatter.arrayTrailingComma": true,
+  "toml.formatter.arrayAutoExpand": true,
+  "toml.formatter.arrayAutoCollapse": true,
+  "toml.formatter.compactArrays": true,
+  "toml.formatter.compactInlineTables": false,
+  "toml.formatter.columnWidth": 80,
+  "toml.formatter.indentString": "  ",
+  "toml.formatter.indentTables": false,
+  "toml.formatter.reorderKeys": true,
+  "toml.formatter.allowedBlankLines": 1,
+  "toml.formatter.trailingNewline": true,
+  "toml.formatter.crlf": false,
+  "toml.schema.enabled": true,
+  "toml.schema.links": false,
+  "toml.schema.repositoryEnabled": true,
+  "toml.debug": false,
+
+  // markdown
+  "markdownlint.onOpen": true,
+  "markdownlint.onSave": true,
+  "markdownlint.onChange": true,
+  "markdownlint.config": {},
+
+  // html
+  "html.enable": false,
+  "html.execArgv": [],
+  "html.trace.server": "off",
+  "html.filetypes": ["html"],
+  "html.format.enable": true,
+  "html.format.wrapLineLength": 80,
+  "html.format.endWithNewline": true,
+  "html.suggest.html5": true,
+  "html.validate.scripts": true,
+  "html.validate.styles": true,
+  "html.validate.html": true,
+  "html.autoClosingTags": true,
+  "htmlhint.enable": true,
+  "htmlhint.documentSelector": ["html"],
+  "htmlhint.options": {},
+
+  // css
+  "css.enable": false,
+
+  "css.completion.triggerPropertyValueCompletion": true,
+  "scss.completion.triggerPropertyValueCompletion": true,
+  "less.completion.triggerPropertyValueCompletion": true,
+
+  "css.completion.completePropertyWithSemicolon": true,
+  "scss.completion.completePropertyWithSemicolon": true,
+  "less.completion.completePropertyWithSemicolon": true,
+
+  "css.validate": true,
+  "scss.validate": true,
+  "less.validate": true,
+
+  "css.colorDecorators.enable": false,
+  "scss.colorDecorators.enable": false,
+  "less.colorDecorators.enable": false,
+
+  "css.lint.compatibleVendorPrefixes": "error",
+  "scss.lint.compatibleVendorPrefixes": "ignore",
+  "less.lint.compatibleVendorPrefixes": "ignore",
+
+  "css.lint.duplicateProperties": "warning",
+  "scss.lint.duplicateProperties": "error",
+  "less.lint.duplicateProperties": "error",
+
+  "css.lint.emptyRules": "error",
+  "scss.lint.emptyRules": "error",
+  "less.lint.emptyRules": "error",
+
+  "css.lint.importStatement": "warning",
+  "scss.lint.importStatement": "warning",
+  "less.lint.importStatement": "warning",
+
+  "css.lint.boxModel": "error",
+  "scss.lint.boxModel": "error",
+  "less.lint.boxModel": "error",
+
+  "css.lint.universalSelector": "warning",
+  "scss.lint.universalSelector": "warning",
+  "less.lint.universalSelector": "warning",
+
+  "css.lint.zeroUnits": "error",
+  "scss.lint.zeroUnits": "error",
+  "less.lint.zeroUnits": "error",
+
+  "css.lint.fontFaceProperties": "error",
+  "scss.lint.fontFaceProperties": "error",
+  "less.lint.fontFaceProperties": "error",
+
+  "css.lint.hexColorLength": "error",
+  "scss.lint.hexColorLength": "error",
+  "less.lint.hexColorLength": "error",
+
+  "css.lint.argumentsInColorFunction": "error",
+  "scss.lint.argumentsInColorFunction": "error",
+  "less.lint.argumentsInColorFunction": "error",
+
+  "css.lint.unknownProperties": "warning",
+  "scss.lint.unknownProperties": "warning",
+  "less.lint.unknownProperties": "warning",
+
+  "css.lint.ieHack": "warning",
+  "scss.lint.ieHack": "warning",
+  "less.lint.ieHack": "warning",
+
+  "css.lint.unknownVendorSpecificProperties": "warning",
+  "scss.lint.unknownVendorSpecificProperties": "warning",
+  "less.lint.unknownVendorSpecificProperties": "warning",
+
+  "css.lint.propertyIgnoredDueToDisplay": "warning",
+  "scss.lint.propertyIgnoredDueToDisplay": "warning",
+  "less.lint.propertyIgnoredDueToDisplay": "warning",
+
+  "css.lint.important": "warning",
+  "scss.lint.important": "warning",
+  "less.lint.important": "warning",
+
+  "css.lint.float": "warning",
+  "scss.lint.float": "warning",
+  "less.lint.float": "warning",
+
+  "css.lint.idSelector": "warning",
+  "scss.lint.idSelector": "warning",
+  "less.lint.idSelector": "warning",
+
+  "css.lint.unknownAtRules": "warning",
+  "less.lint.unknownAtRules": "warning",
+
+  // css modules
+  "cssmodules.camelCase": true,
+  "cssmodules.hintName": "cssmodules",
+
+  // yaml
+  "yaml.format.enable": false,
+  "yaml.format.singleQuote": true,
+  "yaml.format.bracketSpacing": true,
+  "yaml.format.proseWrap": "preserve",
+  "yaml.format.printWidth": 80,
+  "yaml.validate": true,
+  "yaml.hover": true,
+  "yaml.completion": true,
+  "yaml.schemas": {},
+  "yaml.schemaStore.enable": true,
+  "yaml.customTags": [],
+
+
+  // Latex
+  "latex.build.executable": "tectonic",
+  "latex.build.args": [
+    "%f",
+    "--synctex",
+    "--keep-logs",
+    "--keep-intermediates"
+  ],
+  "latex.build.onSave": true,
+  "latex.lint.onSave": true,
+  "latex.lint.onChange": false,
+  "latex.forwardSearch.executable": null,
+  "latex.forwardSearch.args": [],
+
+  // language server settings
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "filetypes": ["go"],
+      "rootPatterns": ["go.mod"]
+    },
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    }
+  }
+}

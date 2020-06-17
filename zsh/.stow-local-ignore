@@ -1,0 +1,4 @@
+\.zsh-plugins.txt
+\.zcompdump(.*)
+\.zsh_sessions
+\.zsh_history

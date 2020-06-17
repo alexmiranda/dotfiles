@@ -1,0 +1,4 @@
+--map-sh=+.zshrc
+--map-sh=+.zshenv
+--map-sh=+.zlogin
+--map-sh=+.sandboxrc

@@ -1,0 +1,10 @@
+[api]
+
+[record]
+idle_time_limit = 2
+stdin = yes
+yes = true
+quiet = true
+
+[play]
+speed = 2

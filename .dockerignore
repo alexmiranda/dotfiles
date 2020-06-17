@@ -1,0 +1,7 @@
+*
+!vimrc
+!vim/autoload/**/*.vim
+!vim/config/**/*.vim
+!vim/plugin/**/*.vim
+!vim/ftplugin/**/*vim
+!vim/syntax/**/*.vim

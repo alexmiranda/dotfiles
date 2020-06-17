@@ -1,0 +1,13 @@
+let g:mapleader="\<Space>"
+let g:maplocalleader=','
+filetype plugin indent on
+syntax on
+
+" These configs need to be loaded first
+runtime config/options.vim
+runtime config/appearance.vim
+runtime config/tmux.vim
+runtime config/plugins.vim
+
+" Now all the other configs are loaded
+runtime! config/*.vim

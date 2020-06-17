@@ -1,0 +1,29 @@
+# exclude everything by default
+--exclude=*
+
+# allow only some source files
+--exclude-exception=.vimrc
+--exclude-exception=*.vim
+--exclude-exception=[Mm]akefile
+--exclude-exception=*.mk
+--exclude-exception=*.mak
+--exclude-exception=*.go
+--exclude-exception=*.rs
+--exclude-exception=*.tf
+--exclude-exception=*.tfvars
+--exclude-exception=*.clj
+--exclude-exception=*.cljs
+--exclude-exception=*.cljc
+--exclude-exception=*.java
+--exclude-exception=*.proto
+--exclude-exception=*.sh
+--exclude-exception=*.zsh
+--exclude-exception=.zshrc
+--exclude-exception=.zshenv
+--exclude-exception=.zlogin
+--exclude-exception=.sandboxrc
+--exclude-exception=*.js
+--exclude-exception=*.ts
+--exclude-exception=*.cs
+--exclude-exception=*.ps1
+--exclude-exception=*.psm1

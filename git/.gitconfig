@@ -1,0 +1,23 @@
+[user]
+	name = Alex Miranda
+	email = alexmirandamoraes@gmail.com
+[core]
+	editor = mvim -v -N -u NORC
+	pager = diff-so-fancy | less --tabs=2 -RFX
+[diff]
+	tool = vimdiff
+[include]
+	path = .config/git/extra.gitconfig
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[difftool]
+	prompt = false
+[rerere]
+	enabled = true
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/local/MacGPG2/bin/gpg2

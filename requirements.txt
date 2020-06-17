@@ -1,0 +1,6 @@
+awscli
+azure-cli
+thefuck
+vim-vint
+httpie
+asciinema

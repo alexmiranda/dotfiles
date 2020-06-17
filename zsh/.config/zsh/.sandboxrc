@@ -1,0 +1,196 @@
+#!/usr/bin/env sh
+
+_sandbox_depends_on(){
+  for dep in "${@}"; do
+    declare -f -F "$dep" > /dev/null 2>&1 && sandbox "$dep"
+  done
+}
+
+sandbox_init_nix(){
+  # shellcheck source=/dev/null
+  [ -r "$HOME/.nix-profile/etc/profile.d/nix.sh" ] && \
+    . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+}
+
+sandbox_hook nix nix-build
+sandbox_hook nix nix-channel
+sandbox_hook nix nix-collect-garbage
+sandbox_hook nix nix-copy-closure
+sandbox_hook nix nix-daemon
+sandbox_hook nix nix-env
+sandbox_hook nix nix-hash
+sandbox_hook nix nix-instantiate
+sandbox_hook nix nix-prefetch-url
+sandbox_hook nix nix-shell
+sandbox_hook nix nix-store
+
+sandbox_init_brew(){
+  if test -x "/opt/homebrew/bin/brew"; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  fi
+}
+
+sandbox_init_tmux(){
+  _sandbox_depends_on nix git
+  [ -z "$TMUX" ] && \
+    [ -s "${HOME}/.tmux/plugins/tpm/bin/update_plugins" ] && \
+      "${HOME}/.tmux/plugins/tpm/bin/update_plugins" all
+}
+
+sandbox_init_git(){
+  test -z ${IN_NIX_SHELL+n} || return 0
+  _sandbox_depends_on nix
+}
+
+sandbox_init_mvim(){
+  _sandbox_depends_on node
+}
+
+sandbox_init_rustup(){
+  _sandbox_depends_on brew
+  export RUSTUP_HOME="${RUSTUP_HOME:-"$HOME/.rustup"}"
+  export CARGO_HOME="${CARGO_HOME:-"$HOME/.cargo"}"
+  # shellcheck source=/dev/null
+  [ -r "$CARGO_HOME/env" ] && \
+    . "$CARGO_HOME/env"
+}
+
+sandbox_hook rustup cargo
+sandbox_hook rustup rustc
+sandbox_hook rustup rustfmt
+sandbox_hook rustup clippy
+
+sandbox_init_taplo(){
+  _sandbox_depends_on rustup
+  if [ ! -x "${CARGO_HOME}/bin/taplo" ] && \
+    command -v cargo >/dev/null 2>&1; then
+    cargo install taplo-cli
+  fi
+}
+
+sandbox_init_go(){
+  test -z ${IN_NIX_SHELL+n} || return 0
+  _sandbox_depends_on brew
+  GOROOT="$(greadlink -f "$(brew --prefix go)/libexec")"
+  export GOTOOLDIR="$GOROOT/pkg/tool/darwin_arm64"
+  export GOPATH="$HOME/go"
+  export GOBIN="$GOPATH/bin"
+  export GOTMPDIR=""
+  export PATH="$GOBIN:$PATH"
+  export GOROOT
+}
+
+sandbox_hook go godoc
+sandbox_hook go gofmt
+
+sandbox_init_sdk(){
+  export SDKMAN_DIR="${HOME}/.sdkman"
+  export sdkman_disable_gvm_alias="true"
+  # shellcheck source=/dev/null
+  [ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ] && \
+    . "$SDKMAN_DIR/bin/sdkman-init.sh"
+}
+
+sandbox_hook sdk java
+sandbox_hook sdk jshell
+sandbox_hook sdk javac
+sandbox_hook sdk java_home
+sandbox_hook sdk jar
+sandbox_hook sdk jconsole
+sandbox_hook sdk javadoc
+sandbox_hook sdk javap
+sandbox_hook sdk javaws
+sandbox_hook sdk jdeps
+sandbox_hook sdk wsgen
+sandbox_hook sdk mvn
+sandbox_hook sdk spring
+
+# FIXME: required because of macvim
+sandbox_init_nvm(){
+  _sandbox_depends_on brew
+  export NVM_DIR="${NVM_DIR:-"$HOME/.nvm"}"
+  # shellcheck source=/dev/null
+  . "$(brew --prefix nvm)/nvm.sh"
+}
+
+sandbox_init_node(){
+  _sandbox_depends_on brew
+  if brew ls --versions nvm; then
+    sandbox nvm
+    return 0
+  fi
+  if brew ls --versions node@14; then
+    export PATH="$(brew --prefix node@14)/bin:$PATH"
+    return 0
+  fi
+}
+
+sandbox_hook node npm
+sandbox_hook node npx
+sandbox_hook node nodemon
+sandbox_hook node yarn
+
+sandbox_init_fuck(){
+  _sandbox_depends_on nix
+  eval "$(thefuck --alias)"
+}
+
+sandbox_init_autojump(){
+  _sandbox_depends_on nix
+  # shellcheck source=/dev/null
+  AUTOJUMP_HOME="$(nix eval 'nixpkgs.autojump.outPath' --raw)"
+  if [ -f "$AUTOJUMP_HOME/share/autojump/autojump.zsh" ]; then
+    . "$AUTOJUMP_HOME/share/autojump/autojump.zsh"
+  fi
+}
+
+sandbox_hook autojump j
+sandbox_hook autojump jc
+sandbox_hook autojump jo
+sandbox_hook autojump jco
+
+sandbox_init_fzf(){
+  _sandbox_depends_on nix
+  if [ -n "${commands[fzf-share]}" ]; then
+    . "$(fzf-share)/key-bindings.zsh"
+    . "$(fzf-share)/completion.zsh"
+  fi
+}
+
+sandbox_hook fzf fzf-tmux
+
+# TODO: prefer to use nix and virtualenv
+# FIXME: this is only required to be installed system-wide because of macvim
+sandbox_init_pyenv(){
+  _sandbox_depends_on brew
+  if command -v pyenv > /dev/null 2>&1; then
+    export PYENV_ROOT="$(pyenv root)"
+    export PATH="$PYENV_ROOT/shims:$PATH"
+    eval "$(pyenv init -)"
+    pyenv which virtualenv > /dev/null 2>&1 && \
+      eval "$(pyenv virtualenv-init -)"
+  fi
+}
+
+sandbox_hook_shims pyenv pyenv
+sandbox_hook_shims pyenv python
+sandbox_hook_shims pyenv python2
+sandbox_hook_shims pyenv python3
+sandbox_hook_shims pyenv pip
+sandbox_hook_shims pyenv pip2
+sandbox_hook_shims pyenv pip3
+sandbox_hook_shims pyenv vint
+
+# FIXME: still required because macvim needs to be installed via homebrew
+sandbox_init_lua(){
+  _sandbox_depends_on brew
+  if command -v luaver > /dev/null 2>&1; then
+    # shellcheck source=/dev/null
+    . "$(which luaver)"
+  fi
+}
+
+sandbox_hook lua luaver
+sandbox_hook lua luajit
+sandbox_hook lua luarocks

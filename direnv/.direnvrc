@@ -1,0 +1,10 @@
+# shellcheck shell=bash
+use_sandbox() {
+  local cmd
+  echo "Using sandbox: ${@}"
+  if command -v sandbox > /dev/null 2>&1; then
+    for cmd in "$@"; do
+      sandbox $cmd
+    done
+  fi
+}

@@ -1,0 +1,7 @@
+version: "3"
+services:
+  vim:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
