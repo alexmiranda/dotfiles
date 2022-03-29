@@ -76,7 +76,7 @@ symlinks: all destination-targets
 	dry-run: symlinks
 
 .PHONY: install
-install: symlinks zsh-plugins gitconfig coc-plugins home-manager bat-theme-install firefox-settings
+install: symlinks zsh-plugins gitconfig coc-plugins bat-theme-install firefox-settings
 
 .PHONY: destination-targets
 destination-targets:
