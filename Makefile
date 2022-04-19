@@ -53,6 +53,7 @@ ALL_PACKAGES+=scripts
 ALL_PACKAGES+=starship
 ALL_PACKAGES+=luarocks
 ALL_PACKAGES+=firefox
+ALL_PACKAGES+=tfswitch
 PACKAGES?=$(ALL_PACKAGES)
 
 dry-run: STOW_FLAGS:=-n $(STOW_FLAGS)
