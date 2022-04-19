@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 : "${XDG_CONFIG_HOME:="$HOME/.config"}"
+: "${XDG_DATA_HOME:="$HOME/.local/share"}"
+: "${XDG_CACHE_HOME:="$HOME/.cache"}"
 : "${ZDOTDIR:="$XDG_CONFIG_HOME/zsh"}"
 
 [ -r "$HOME/.nix-profile/etc/profile.d/nix.sh" ] && \
