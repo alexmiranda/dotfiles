@@ -24,6 +24,7 @@
   home.packages = with pkgs; [
     # alacritty # installed with homebrew
     antibody
+    asdf-vm
     autoconf
     autojump
     bash
@@ -45,6 +46,7 @@
     # keybase # installed with homebrew
     # macvim # installed with homebrew
     # musescore # installed with homebrew
+    niv
     neovim
     # obs-studio # installed with homebrew
     reattach-to-user-namespace
