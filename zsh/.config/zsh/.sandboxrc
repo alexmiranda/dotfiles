@@ -115,6 +115,7 @@ sandbox_init_nvm(){
 }
 
 sandbox_init_node(){
+  test -z ${IN_NIX_SHELL+n} || return 0
   _sandbox_depends_on brew
   if brew ls --versions nvm; then
     sandbox nvm
