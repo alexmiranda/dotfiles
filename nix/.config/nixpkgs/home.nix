@@ -60,7 +60,7 @@
     # teams # installed with homebrew
     # telegram # installed with homebrew
     thefuck
-    # tor
+    tor
     tmux
     upx
     # vlc # installed with homebrew
