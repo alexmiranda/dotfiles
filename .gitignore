@@ -1,4 +1,3 @@
-### Mine ###
 Brewfile.lock.json
 vim/.vim/pack
 vim/.vim/backup
@@ -24,6 +23,7 @@ __pycache__
 pyenv/.pyenv/**/*
 !pyenv/.pyenv/version
 !.gitkeep
+scripts/.local/bin/idea
 
 ### macOS ###
 # General
