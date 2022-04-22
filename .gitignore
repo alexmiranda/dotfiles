@@ -24,6 +24,7 @@ pyenv/.pyenv/**/*
 !pyenv/.pyenv/version
 !.gitkeep
 scripts/.local/bin/idea
+coc/.config/coc/extensions/package.json
 
 ### macOS ###
 # General
