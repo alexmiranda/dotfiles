@@ -3,6 +3,10 @@ if exists('g:mine_tmux_repl_loaded')
 endif
 let g:mine_tmux_repl_loaded=1
 
+if empty($TMUX)
+  finish
+endif
+
 function! s:get_visual_selection()
   let [line_start, column_start] = getpos("'<")[1:2]
   let [line_end, column_end] = getpos("'>")[1:2]
@@ -15,10 +19,38 @@ function! s:get_visual_selection()
   return join(lines, "\n")
 endfunction
 
+" Sends the current selected text to the last active tmux pane and execute.
 function! <SID>TmuxSendSelection()
+  let curr_tmux_pane = trim(system("tmux display -p '#{pane_index}'"))
+
+  " There needs to be at least two panes in the current window.
+  let tmux_window_panes = trim(system("tmux display -p '#{window_panes}'"))->str2nr()
+  if tmux_window_panes == 1
+    return
+  endif
+
+  let tmux_last_pane = trim(system("tmux display -p -t '{last}' '#{pane_index}'"))
+
+  " If there wasn't a last active pane, it tries the pane immediately to the right
+  " of the active pane (the pane where vim is).
+  if empty(tmux_last_pane) || tmux_last_pane ==# curr_tmux_pane
+    let tmux_last_pane = trim(system("tmux display -p -t '{right-of}' '#{pane_index}'"))
+    " If there wasn't a pane to the right of the active one, then it tries the pane below.
+    if empty(tmux_last_pane) || tmux_last_pane ==# curr_tmux_pane
+      let tmux_last_pane = trim(system("tmux display -p -t '{down-of}' '#{pane_index}'"))
+    endif
+  endif
+
+  " Sometimes the panes 'right-of' or 'down-of' reported by tmux can be the active
+  " pane, e.g. when there's only one pane in the row/column. In this case, it's
+  " necessary to check if they are not the same in either case...
+  if curr_tmux_pane ==# tmux_last_pane
+    return
+  endif
+
   let selectedText = s:get_visual_selection()
-  if selectedText !=? ''
-    silent execute "!tmux send -t 2 '" . selectedText . "' Enter"
+  if len(selectedText) > 0
+    silent execute "!tmux send -t " . tmux_last_pane . " '" . selectedText . "' Enter"
     redraw!
   endif
 endfunction
