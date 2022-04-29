@@ -26,6 +26,8 @@ augroup reload_vimrc
         \ s:myvimrc, $MYVIMRC)
 augroup END
 
-if mapcheck('<leader>r', 'n') ==# ''
-  nnoremap <leader>r :<C-u>source $MYVIMRC<bar>AirlineRefresh<bar>redraw<CR>
-endif
+nnoremap <leader>r :<C-u>source $MYVIMRC<bar>AirlineRefresh<bar>redraw<CR>
+
+" if mapcheck('<leader>r', 'n') ==# ''
+"   nnoremap <leader>r :<C-u>source $MYVIMRC<bar>AirlineRefresh<bar>redraw<CR>
+" endif
