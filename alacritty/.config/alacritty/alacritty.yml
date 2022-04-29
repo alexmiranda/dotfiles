@@ -22,8 +22,10 @@ scrolling:
 font:
   size: 15.0
   normal:
-    family: FiraCode Nerd Font
-    style: Retina
+    family: ComicMono Nerd Font Mono
+    style: Normal
+    # family: FiraCode Nerd Font
+    # style: Retina
   bold:
     style: SemiBold
   italic:
@@ -32,8 +34,8 @@ font:
   bold_italic:
     style: Bold Italic
   offset:
-    x: 1
-    y: 1
+    x: 2
+    y: 2
   glyph_offset:
     x: 0
     y: 0
