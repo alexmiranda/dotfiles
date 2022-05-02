@@ -20,7 +20,7 @@
   home.stateVersion = "21.05";
 
   # FIXME: some of the packages commented out below are installed via homebrew
-  # because of issues with Spotlight/Finder not being able to find them.
+  # because of issues with Spotlight/Finder not finding them.
   home.packages = with pkgs; [
     # alacritty # installed with homebrew
     antibody
@@ -62,6 +62,7 @@
     thefuck
     tor
     tmux
+    universal-ctags
     upx
     # vlc # installed with homebrew
     # vscodium # installed with homebrew
