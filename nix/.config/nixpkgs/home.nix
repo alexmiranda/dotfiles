@@ -49,6 +49,7 @@
     niv
     neovim
     # obs-studio # installed with homebrew
+    parallel
     reattach-to-user-namespace
     ripgrep
     shellcheck
