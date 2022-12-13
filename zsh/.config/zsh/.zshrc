@@ -1,4 +1,5 @@
 : "${SANDBOXRC:="$ZDOTDIR/.sandboxrc"}"
+: "${ANTIDOTE_DIR:="$ZDOTDIR/.antidote"}"
 
 # From: https://gist.github.com/ctechols/ca1035271ad134841284
 # - '#q' is an explicit glob qualifier that makes globbing work within zsh's
@@ -35,7 +36,15 @@ plugins=()
 
 # Load plugins
 # shellcheck source=.zsh-plugins.sh
-. "$ZDOTDIR/.zsh-plugins.sh"
+if [[ ! "${ZDOTDIR}/.zsh_plugins.sh" -nt "${ZDOTDIR}/.zsh-plugins.txt" ]]; then
+  if [[ ! -d "${ANTIDOTE_DIR}" ]]; then
+    git clone --depth=1 https://github.com/mattmc3/antidote.git "${ANTIDOTE_DIR}"
+  fi
+  . "${ANTIDOTE_DIR}/antidote.zsh"
+  antidote bundle < "${ZDOTDIR}/.zsh-plugins.txt" > "${ZDOTDIR}/.zsh-plugins.sh"
+fi
+
+. "${ZDOTDIR}/.zsh-plugins.sh"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white,underline'
 export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgrep/config"

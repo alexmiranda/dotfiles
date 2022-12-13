@@ -22,8 +22,8 @@
   # FIXME: some of the packages commented out below are installed via homebrew
   # because of issues with Spotlight/Finder not finding them.
   home.packages = with pkgs; [
-    # alacritty # installed with homebrew
-    antibody
+    # alacritty
+    # antibody # must switch to antidote
     asdf-vm
     autoconf
     autojump
@@ -48,6 +48,7 @@
     # musescore # installed with homebrew
     niv
     neovim
+    nodejs-18_x # this is used by vim plugins
     # obs-studio # installed with homebrew
     parallel
     reattach-to-user-namespace
@@ -66,7 +67,7 @@
     universal-ctags
     upx
     # vlc # installed with homebrew
-    # vscodium # installed with homebrew
+    # vscodium
     # zoom-us # installed with homebrew
     zsh
   ];

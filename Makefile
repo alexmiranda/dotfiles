@@ -59,6 +59,7 @@ PACKAGES?=$(ALL_PACKAGES)
 dry-run: STOW_FLAGS:=-n $(STOW_FLAGS)
 bat-theme-install: BATENV=BAT_CONFIG_PATH=$(BAT_CONFIG)/config
 pip-packages: SHELL=/bin/zsh
+zsh-plugins: SHELL=/bin/zsh
 ff-ext-%: FIREFOX_EXT_TMP_DIR:=$(shell mktemp -d -t $(shell date +"%Y%m%d"))
 
 define install_package
@@ -96,13 +97,16 @@ destination-targets:
 zsh-test:
 	(cd $(ZSH_CONF); ZDOTDIR=. zsh -l; cd -)
 
-$(ZSH_CONF)/.zsh-plugins.sh: $(ZSH_CONF)/.zsh-plugins.txt
-	antibody bundle < $< > $@
+# $(ZSH_CONF)/.zsh-plugins.sh: $(ZSH_CONF)/.zsh-plugins.txt
+# 	antibody bundle < $< > $@
 
 .PHONY: zsh-plugins
 zsh-plugins:
-	test -d "$$(antibody home)" || mkdir -p "$$(antibody home)"
-	antibody update
+	if [ -d "$${ZDOTDIR}/.antidote" ]; then \
+		source "$${ZDOTDIR}/.antidote/antidote.zsh"; \
+		test -d "$$(antidote home)" || mkdir -p "$$(antidote home)"; \
+		antidote update; \
+	fi
 
 .PHONY: gitconfig
 gitconfig:
