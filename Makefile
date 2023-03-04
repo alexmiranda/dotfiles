@@ -10,7 +10,7 @@ ZSH_CONF=zsh/.config/zsh
 TMUX_TPM=tmux/.tmux/plugins/tpm
 TMUX_TPM_REPO=https://github.com/tmux-plugins/tpm
 STOW_TARGET?=~
-STOW_FLAGS?=-vSt
+STOW_FLAGS?=--no-folding -vSt
 BREW_INSTALL_SCRIPT=https://raw.githubusercontent.com/Homebrew/install/master/install.sh
 SDKMAN_INSTALL_SCRIPT=https://get.sdkman.io?rcupdate=false
 FIREFOX=open -a Firefox --background -W --args
