@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#!nix-shell -i bash -p dialog git maven niv findutils
+#!nix-shell -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/nixos-22.11.tar.gz -i bash -p niv dialog git maven findutils
 # shellcheck shell=bash disable=SC1008
 # shellcheck disable=SC2129
 
