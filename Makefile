@@ -75,7 +75,7 @@ symlinks: all destination-targets
 	$(foreach package,$(PACKAGES),$(call install_package,$(package)))
 
 .PHONY: dry-run
-	dry-run: symlinks
+dry-run: symlinks
 
 .PHONY: install
 install: symlinks zsh-plugins gitconfig coc-plugins bat-theme-install firefox-settings
