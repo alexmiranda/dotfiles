@@ -30,6 +30,7 @@ FF_EXT_REFERER_MOD_MANIFEST="https://raw.githubusercontent.com/airtower-luna/ref
 
 ALL_PACKAGES=stow
 ALL_PACKAGES+=nix
+ALL_PACKAGES+=home-manager
 ALL_PACKAGES+=ssh
 ALL_PACKAGES+=git
 ALL_PACKAGES+=gnupg
