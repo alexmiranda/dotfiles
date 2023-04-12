@@ -74,7 +74,7 @@ OUTDIR="$(dialog --stdout --inputbox "Output directory:" 0 0 "${OUTDIR}")"
 mkdir -p "${OUTDIR}" && pushd "${OUTDIR}"
 git init
 
-curl -sL https://www.toptal.com/developers/gitignore/api/java,maven,macos,windows,linux,vscode,vim,idea,eclipse,netbeans > .gitignore
+curl -sL https://www.toptal.com/developers/gitignore/api/java,maven,macos,windows,linux,vscode,vim,eclipse,netbeans,intellij+all > .gitignore
 
 mvn archetype:generate \
   -DgroupId="${GROUP_ID}" \
