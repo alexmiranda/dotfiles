@@ -200,3 +200,6 @@ user_pref("accessibility.tabfocus", 7);
 user_pref("webgl.disabled", false);
 user_pref("webgl.enable-webgl2", true);
 
+// Disable page translation
+user_pref("browser.translations.enable", false);
+
