@@ -50,6 +50,12 @@
     "generateFlags": []
   },
 
+  // zig
+  "zig.enabled": false,
+  "zig.path": "zls",
+  "zig.startUpMessage": true,
+  "zig.debugLog": false,
+
   // java
   "java.enabled": false,
   "java.errors.incompleteClasspath.severity": "error",
