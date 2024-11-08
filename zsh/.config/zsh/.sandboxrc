@@ -85,6 +85,7 @@ sandbox_hook go godoc
 sandbox_hook go gofmt
 
 sandbox_init_sdk(){
+  test -z ${IN_NIX_SHELL+n} || return 0
   export SDKMAN_DIR="${HOME}/.sdkman"
   export sdkman_disable_gvm_alias="true"
   # shellcheck source=/dev/null
@@ -195,3 +196,6 @@ sandbox_init_lua(){
 sandbox_hook lua luaver
 sandbox_hook lua luajit
 sandbox_hook lua luarocks
+
+sandbox_init_brew
+sandbox_init_fzf

@@ -14,4 +14,4 @@ nnoremap Q <Nop>
 nmap <F1> <Nop>
 
 " jk for exiting insert mode
-inoremap jk <Esc>
+" inoremap jk <Esc>

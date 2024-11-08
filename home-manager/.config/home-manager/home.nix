@@ -36,7 +36,7 @@
     # firefox # installed with homebrew
     fzf
     ghostscript
-    # git-crypt
+    git-crypt
     gnupg
     gnused
     go2nix
@@ -73,4 +73,8 @@
   ];
 
   programs.direnv.enable = true;
+  programs.emacs.enable = true;
+
+  # programs.niv.package = pkgs.niv.overrideAttrs(_: rec {
+  # });
 }
