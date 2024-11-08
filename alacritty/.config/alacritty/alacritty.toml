@@ -1,0 +1,390 @@
+
+[bell]
+duration = 0
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x928374"
+blue = "0x83a598"
+cyan = "0x8ec07c"
+green = "0xb8bb26"
+magenta = "0xd3869b"
+red = "0xfb4934"
+white = "0xebdbb2"
+yellow = "0xfabd2f"
+
+[colors.normal]
+black = "0x282828"
+blue = "0x458588"
+cyan = "0x689d6a"
+green = "0x98971a"
+magenta = "0xb16286"
+red = "0xcc241d"
+white = "0xa89984"
+yellow = "0xd79921"
+
+[colors.primary]
+background = "0x282828"
+foreground = "0xebdbb2"
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 15.0
+
+[font.bold]
+style = "SemiBold"
+
+[font.bold_italic]
+style = "Bold Italic"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "Menlo"
+style = "Italic"
+
+[font.normal]
+family = "ComicMono Nerd Font Mono"
+style = "Normal"
+
+[font.offset]
+x = 2
+y = 2
+
+[[hints.enabled]]
+post_processing = true
+regex = "(https?:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
+
+[hints.enabled.binding]
+key = "U"
+mods = "Control|Shift"
+
+[hints.enabled.command]
+args = ["-private-window"]
+program = "/Applications/Firefox.app/Contents/MacOS/firefox"
+
+[hints.enabled.mouse]
+enabled = true
+mods = "None"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ClearHistory"
+key = "K"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "K"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Hide"
+key = "H"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Minimize"
+key = "M"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "Q"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "Return"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F"
+mods = "Command|Control"
+
+[mouse]
+hide_when_typing = true
+
+# [schemes.gruvbox_dark.bright]
+# black = "0x928374"
+# blue = "0x83a598"
+# cyan = "0x8ec07c"
+# green = "0xb8bb26"
+# magenta = "0xd3869b"
+# red = "0xfb4934"
+# white = "0xebdbb2"
+# yellow = "0xfabd2f"
+
+# [schemes.gruvbox_dark.normal]
+# black = "0x282828"
+# blue = "0x458588"
+# cyan = "0x689d6a"
+# green = "0x98971a"
+# magenta = "0xb16286"
+# red = "0xcc241d"
+# white = "0xa89984"
+# yellow = "0xd79921"
+
+# [schemes.gruvbox_dark.primary]
+# background = "0x282828"
+# foreground = "0xebdbb2"
+
+# [schemes.gruvbox_dark_hard_contrast."<<".bright]
+# black = "0x928374"
+# blue = "0x83a598"
+# cyan = "0x8ec07c"
+# green = "0xb8bb26"
+# magenta = "0xd3869b"
+# red = "0xfb4934"
+# white = "0xebdbb2"
+# yellow = "0xfabd2f"
+
+# [schemes.gruvbox_dark_hard_contrast."<<".normal]
+# black = "0x282828"
+# blue = "0x458588"
+# cyan = "0x689d6a"
+# green = "0x98971a"
+# magenta = "0xb16286"
+# red = "0xcc241d"
+# white = "0xa89984"
+# yellow = "0xd79921"
+
+# [schemes.gruvbox_dark_hard_contrast."<<".primary]
+# background = "0x282828"
+# foreground = "0xebdbb2"
+
+# [schemes.gruvbox_dark_hard_contrast.primary]
+# background = "0x1d2021"
+# foreground = "0xebdbb2"
+
+# [schemes.gruvbox_dark_soft_contrast."<<".bright]
+# black = "0x928374"
+# blue = "0x83a598"
+# cyan = "0x8ec07c"
+# green = "0xb8bb26"
+# magenta = "0xd3869b"
+# red = "0xfb4934"
+# white = "0xebdbb2"
+# yellow = "0xfabd2f"
+
+# [schemes.gruvbox_dark_soft_contrast."<<".normal]
+# black = "0x282828"
+# blue = "0x458588"
+# cyan = "0x689d6a"
+# green = "0x98971a"
+# magenta = "0xb16286"
+# red = "0xcc241d"
+# white = "0xa89984"
+# yellow = "0xd79921"
+
+# [schemes.gruvbox_dark_soft_contrast."<<".primary]
+# background = "0x282828"
+# foreground = "0xebdbb2"
+
+# [schemes.gruvbox_dark_soft_contrast.primary]
+# background = "0x32302f"
+# foreground = "0xebdbb2"
+
+# [schemes.gruvbox_light.bright]
+# black = "0x928374"
+# blue = "0x076678"
+# cyan = "0x427b58"
+# green = "0x79740e"
+# magenta = "0x8f3f71"
+# red = "0x9d0006"
+# white = "0x3c3836"
+# yellow = "0xb57614"
+
+# [schemes.gruvbox_light.normal]
+# black = "0xfbf1c7"
+# blue = "0x458588"
+# cyan = "0x689d6a"
+# green = "0x98971a"
+# magenta = "0xb16286"
+# red = "0xcc241d"
+# white = "0x7c6f64"
+# yellow = "0xd79921"
+
+# [schemes.gruvbox_light.primary]
+# background = "0xfbf1c7"
+# foreground = "0x3c3836"
+
+# [schemes.gruvbox_light_hard_constrast."<<".bright]
+# black = "0x928374"
+# blue = "0x076678"
+# cyan = "0x427b58"
+# green = "0x79740e"
+# magenta = "0x8f3f71"
+# red = "0x9d0006"
+# white = "0x3c3836"
+# yellow = "0xb57614"
+
+# [schemes.gruvbox_light_hard_constrast."<<".normal]
+# black = "0xfbf1c7"
+# blue = "0x458588"
+# cyan = "0x689d6a"
+# green = "0x98971a"
+# magenta = "0xb16286"
+# red = "0xcc241d"
+# white = "0x7c6f64"
+# yellow = "0xd79921"
+
+# [schemes.gruvbox_light_hard_constrast."<<".primary]
+# background = "0xfbf1c7"
+# foreground = "0x3c3836"
+
+# [schemes.gruvbox_light_hard_constrast.primary]
+# background = "0xf9f5d7"
+# foreground = "0x3c3836"
+
+# [schemes.gruvbox_light_soft_constrast."<<".bright]
+# black = "0x928374"
+# blue = "0x076678"
+# cyan = "0x427b58"
+# green = "0x79740e"
+# magenta = "0x8f3f71"
+# red = "0x9d0006"
+# white = "0x3c3836"
+# yellow = "0xb57614"
+
+# [schemes.gruvbox_light_soft_constrast."<<".normal]
+# black = "0xfbf1c7"
+# blue = "0x458588"
+# cyan = "0x689d6a"
+# green = "0x98971a"
+# magenta = "0xb16286"
+# red = "0xcc241d"
+# white = "0x7c6f64"
+# yellow = "0xd79921"
+
+# [schemes.gruvbox_light_soft_constrast."<<".primary]
+# background = "0xfbf1c7"
+# foreground = "0x3c3836"
+
+# [schemes.gruvbox_light_soft_constrast.primary]
+# background = "0xf2e5bc"
+# foreground = "0x3c3836"
+
+# [schemes.one_dark.bright]
+# black = "0x5c6370"
+# blue = "0x61afef"
+# cyan = "0x56b6c2"
+# green = "0x98c379"
+# magenta = "0xc678dd"
+# red = "0xe06c75"
+# white = "0xffffff"
+# yellow = "0xd19a66"
+
+# [schemes.one_dark.normal]
+# black = "0x1e2127"
+# blue = "0x61afef"
+# cyan = "0x56b6c2"
+# green = "0x98c379"
+# magenta = "0xc678dd"
+# red = "0xe06c75"
+# white = "0xabb2bf"
+# yellow = "0xd19a66"
+
+# [schemes.one_dark.primary]
+# background = "0x1e2127"
+# foreground = "0xabb2bf"
+
+# [schemes.papercolor_light.bright]
+# black = "0x969694"
+# blue = "0x4271AE"
+# cyan = "0x3E999F"
+# green = "0x718C00"
+# magenta = "0x8959A8"
+# red = "0xD7005F"
+# white = "0xF5F5F5"
+# yellow = "0xD75F00"
+
+# [schemes.papercolor_light.normal]
+# black = "0xEDEDED"
+# blue = "0x4271AE"
+# cyan = "0x3E999F"
+# green = "0x718C00"
+# magenta = "0x8959A8"
+# red = "0xD7005F"
+# white = "0x4D4D4C"
+# yellow = "0xD75F00"
+
+# [schemes.papercolor_light.primary]
+# background = "0xEEEEEE"
+# foreground = "0x4D4D4C"
+
+[scrolling]
+history = 10000
+multiplier = 5
+
+[selection]
+save_to_clipboard = true
+
+[terminal.shell]
+args = ["-arm64", "-e", "SHELL=\"/Users/alex/.nix-profile/bin/zsh\"", "/Users/alex/.nix-profile/bin/zsh", "-l"]
+program = "/usr/bin/arch"
+
+[window]
+decorations = "buttonless"
+dynamic_padding = true
+dynamic_title = true
+opacity = 0.9
+
+[window.dimensions]
+columns = 80
+lines = 25
+
+[window.padding]
+x = 5
+y = 2
+
+[general]
+live_config_reload = true
+working_directory = "None"
+
+[terminal]
