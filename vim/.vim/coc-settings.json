@@ -260,6 +260,11 @@
       "filetypes": ["go"],
       "rootPatterns": ["go.mod"]
     },
+    "zig": {
+      "command": "zls",
+      "filetypes": ["zig"],
+      "rootPatterns": ["build.zig"]
+    },
     "bash": {
       "command": "bash-language-server",
       "args": ["start"],
