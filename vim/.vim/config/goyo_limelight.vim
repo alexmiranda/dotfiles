@@ -3,7 +3,7 @@ let s:colorcolumn=&colorcolumn
 
 function! <SID>GoyoLoad()
   packadd goyo.vim
-  packadd limelight.vim
+  " packadd limelight.vim
   nmap <silent> <C-w>o :<C-u>Goyo<CR>
   Goyo
 endfunction
@@ -18,7 +18,7 @@ function! <SID>GoyoEnter()
   set noshowmode
   set noshowcmd
   setlocal scrolloff=999
-  Limelight
+  " Limelight
   normal! zz
 endfunction
 
@@ -31,7 +31,7 @@ function! <SID>GoyoLeave()
   set showmode
   set showcmd
   setlocal scrolloff<
-  Limelight!
+  " Limelight!
   AirlineRefresh
 endfunction
 
