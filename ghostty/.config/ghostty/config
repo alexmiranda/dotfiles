@@ -1,0 +1,4 @@
+theme = light:GruvBoxLight,dark:GruvBoxDark
+font-family = ComicMono Nerd Font Mono
+font-size = 16
+adjust-cell-height = 2

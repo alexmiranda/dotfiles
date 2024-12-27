@@ -35,6 +35,7 @@ ALL_PACKAGES+=ssh
 ALL_PACKAGES+=git
 ALL_PACKAGES+=gnupg
 ALL_PACKAGES+=alacritty
+ALL_PACKAGES+=ghostty
 ALL_PACKAGES+=zsh
 ALL_PACKAGES+=bash
 ALL_PACKAGES+=direnv
@@ -341,6 +342,9 @@ ff-ext-referer-mod:
 	mkdir -p $(FIREFOX_EXTS); \
 	mv $${XPI_FILE} $(FIREFOX_EXTS)/$${TARGET_NAME}; \
 	rm -rf $(FIREFOX_EXT_TMP_DIR);
+
+ghostty/.config/ghostty/default_config:
+	ghostty +show-config --default --docs > $@
 
 .PHONY: clean
 clean:

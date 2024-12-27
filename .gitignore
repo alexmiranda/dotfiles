@@ -25,6 +25,7 @@ pyenv/.pyenv/**/*
 !.gitkeep
 scripts/.local/bin/idea
 coc/.config/coc/extensions/package.json
+ghostty/.config/ghostty/default_config
 
 ### macOS ###
 # General
