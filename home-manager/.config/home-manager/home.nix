@@ -39,7 +39,7 @@
     git-crypt
     gnupg
     gnused
-    go2nix
+    # go2nix
     htop
     jq
     # keepassxc # installed with homebrew
