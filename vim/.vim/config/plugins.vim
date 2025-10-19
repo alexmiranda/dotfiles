@@ -32,6 +32,7 @@ call minpac#add('cespare/vim-toml', {'type':'opt', 'branch': 'main'})
 call minpac#add('LnL7/vim-nix', {'type':'opt'})
 " call minpac#add('arecarn/vim-fold-cycle', {'type':'opt'})
 " call minpac#add('pseewald/vim-anyfold', {'type':'opt'})
+call minpac#add('github/copilot.vim')
 
 command! PackUpdate source $MYVIMRC | call minpac#update()
 command! PackClean source $MYVIMRC | call minpac#clean()
