@@ -49,7 +49,7 @@
     # musescore # installed with homebrew
     niv
     neovim
-    nodejs-18_x # this is used by vim plugins
+    nodejs_24 # this is used by vim plugins
     # obs-studio # installed with homebrew
     parallel
     reattach-to-user-namespace
