@@ -61,7 +61,6 @@
     # steam # installed with homebrew
     # teams # installed with homebrew
     # telegram # installed with homebrew
-    thefuck
     tor
     tmux
     universal-ctags
