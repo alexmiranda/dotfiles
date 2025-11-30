@@ -33,6 +33,7 @@
     curl
     diff-so-fancy
     direnv
+    fd
     # firefox # installed with homebrew
     fzf
     ghostscript
